@@ -22,45 +22,97 @@ st.set_page_config(
 
 # 各商圈市場均價（元/坪）
 DEFAULT_MARKET_PRICES = {
-    "體育園區重劃區": {
-        "unit_price_ping": 390000,   # 元/坪
-        "land_price_sqm": 243000,  # 公告地價 元/㎡
-        "far": 2.25,            # 容積率
-        "monthly_rent_ping": 900,  # 元/坪/月（含公設）
-        "cap_rate": 0.025,
-        "description": "青埔高鐵特區，近高鐵站，新興重劃區",
+    # ── 中壢區（2024Q4實價登錄校正值）
+    "【中壢】體育園區重劃區（青埔）": {
+        "unit_price_ping": 420000,   # 樂居近一年均價39萬/新屋47萬，青埔因高鐵溢價取42萬
+        "land_price_sqm": 243000,
+        "far": 2.25,
+        "monthly_rent_ping": 950,
+        "cap_rate": 0.024,
+        "description": "青埔高鐵特區，機捷環北站，桃園最熱重劃區",
+        "region": "中壢區",
     },
-    "中壢核心商圈": {
-        "unit_price_ping": 290000,
+    "【中壢】中壢核心商圈": {
+        "unit_price_ping": 310000,   # 中壢市區電梯大樓實際成交約28-33萬
         "land_price_sqm": 201000,
         "far": 3.60,
-        "monthly_rent_ping": 700,
+        "monthly_rent_ping": 720,
         "cap_rate": 0.025,
-        "description": "中壢火車站周邊，生活機能完善",
+        "description": "中壢火車站周邊，生活機能完善，都更潛力",
+        "region": "中壢區",
     },
-    "中原大學商圈": {
-        "unit_price_ping": 260000,
+    "【中壢】中原大學商圈": {
+        "unit_price_ping": 270000,   # 學區穩定，近一年約25-28萬
         "land_price_sqm": 166000,
         "far": 1.60,
-        "monthly_rent_ping": 650,
+        "monthly_rent_ping": 670,
         "cap_rate": 0.025,
-        "description": "學區房，租賃需求穩定",
+        "description": "學區房，租賃需求穩定，自住首購首選",
+        "region": "中壢區",
     },
-    "龍岡商圈": {
-        "unit_price_ping": 230000,
+    "【中壢】龍岡商圈": {
+        "unit_price_ping": 240000,   # 龍岡約22-26萬
         "land_price_sqm": 127000,
         "far": 1.60,
-        "monthly_rent_ping": 580,
+        "monthly_rent_ping": 600,
         "cap_rate": 0.025,
-        "description": "自住型社區，性價比高",
+        "description": "自住型社區，東南亞族裔聚集，性價比高",
+        "region": "中壢區",
     },
-    "內壢工業區周邊": {
-        "unit_price_ping": 200000,
+    "【中壢】內壢工業區周邊": {
+        "unit_price_ping": 210000,   # 內壢約20-23萬
         "land_price_sqm": 87000,
         "far": 1.60,
-        "monthly_rent_ping": 520,
+        "monthly_rent_ping": 540,
         "cap_rate": 0.026,
-        "description": "工業區勞工需求，剛需市場",
+        "description": "工業區勞工剛需市場，總價親民",
+        "region": "中壢區",
+    },
+    # ── 龜山區（2024-2025實價登錄資料）
+    "【龜山】A7重劃區（體育大學生活圈）": {
+        "unit_price_ping": 480000,   # 樂居2025均價45.74萬，A7均價47-48萬
+        "land_price_sqm": 185000,
+        "far": 2.30,
+        "monthly_rent_ping": 1050,
+        "cap_rate": 0.023,
+        "description": "機捷A7站，大林口生活圈，北台灣首購熱區",
+        "region": "龜山區",
+    },
+    "【龜山】長庚醫院商圈（A8周邊）": {
+        "unit_price_ping": 600000,   # A8周邊約60萬/坪
+        "land_price_sqm": 220000,
+        "far": 2.40,
+        "monthly_rent_ping": 1300,
+        "cap_rate": 0.023,
+        "description": "機捷A8站，長庚醫院生活圈，環球百貨，機能成熟",
+        "region": "龜山區",
+    },
+    "【龜山】華亞科技園區周邊": {
+        "unit_price_ping": 470000,   # 華亞周邊約45-50萬
+        "land_price_sqm": 175000,
+        "far": 2.25,
+        "monthly_rent_ping": 1000,
+        "cap_rate": 0.023,
+        "description": "廣達、欣興等科技廠區旁，就業人口需求大",
+        "region": "龜山區",
+    },
+    "【龜山】迴龍捷運站周邊": {
+        "unit_price_ping": 560000,   # 迴龍接近新莊價，約55-60萬
+        "land_price_sqm": 210000,
+        "far": 2.25,
+        "monthly_rent_ping": 1200,
+        "cap_rate": 0.023,
+        "description": "捷運迴龍站，雙北邊界，接近新莊價格帶",
+        "region": "龜山區",
+    },
+    "【龜山】龜山舊市區": {
+        "unit_price_ping": 320000,   # 舊市區3字頭，約30-35萬
+        "land_price_sqm": 130000,
+        "far": 1.60,
+        "monthly_rent_ping": 720,
+        "cap_rate": 0.025,
+        "description": "龜山傳統市區，銘傳大學周邊，房價低基期",
+        "region": "龜山區",
     },
 }
 
@@ -71,11 +123,55 @@ CONSTRUCTION_COST = {
     "豪宅級精裝修": 220000,
 }
 
-# 品牌溢價
+# 品牌溢價（三派系）
 BRAND_PREMIUM = {
-    "一線建商（遠雄、興富發、寶佳等）": 0.08,
-    "二線建商（地區知名）": 0.03,
-    "素地自建 / 不知名建商": 0.00,
+    "標竿派 — 中悅、國泰、桃大、京懋、璞園、昇捷": 0.10,
+    "實力派 — 昭揚、威均、中麗、長昇、禾林": 0.05,
+    "規模派 — 寶佳、興富發": 0.03,
+    "其他 / 不知名建商": 0.00,
+}
+
+BRAND_LABEL = {
+    "標竿派 — 中悅、國泰、桃大、京懋、璞園、昇捷": "標竿派",
+    "實力派 — 昭揚、威均、中麗、長昇、禾林": "實力派",
+    "規模派 — 寶佳、興富發": "規模派",
+    "其他 / 不知名建商": "其他",
+}
+
+# 各商圈歷年均價趨勢（元/坪，來源：實價登錄統計+樂居行情資料）
+MARKET_TREND = {
+    # 中壢區（2024Q4校正）
+    "【中壢】體育園區重劃區（青埔）": {
+        2020: 270000, 2021: 310000, 2022: 350000, 2023: 390000, 2024: 420000,
+    },
+    "【中壢】中壢核心商圈": {
+        2020: 200000, 2021: 230000, 2022: 260000, 2023: 285000, 2024: 310000,
+    },
+    "【中壢】中原大學商圈": {
+        2020: 180000, 2021: 205000, 2022: 230000, 2023: 252000, 2024: 270000,
+    },
+    "【中壢】龍岡商圈": {
+        2020: 160000, 2021: 183000, 2022: 205000, 2023: 224000, 2024: 240000,
+    },
+    "【中壢】內壢工業區周邊": {
+        2020: 140000, 2021: 160000, 2022: 178000, 2023: 196000, 2024: 210000,
+    },
+    # 龜山區（來源：樂居、住展、實價登錄統計）
+    "【龜山】A7重劃區（體育大學生活圈）": {
+        2020: 253000, 2021: 320000, 2022: 349000, 2023: 400000, 2024: 480000,
+    },
+    "【龜山】長庚醫院商圈（A8周邊）": {
+        2020: 420000, 2021: 480000, 2022: 530000, 2023: 570000, 2024: 600000,
+    },
+    "【龜山】華亞科技園區周邊": {
+        2020: 300000, 2021: 350000, 2022: 390000, 2023: 430000, 2024: 470000,
+    },
+    "【龜山】迴龍捷運站周邊": {
+        2020: 380000, 2021: 430000, 2022: 480000, 2023: 520000, 2024: 560000,
+    },
+    "【龜山】龜山舊市區": {
+        2020: 200000, 2021: 230000, 2022: 260000, 2023: 290000, 2024: 320000,
+    },
 }
 
 # 車位類型與市場價格
@@ -240,65 +336,35 @@ def main():
     <div style='background: linear-gradient(135deg, #1a1f2e, #2d3548);
                 padding: 24px 32px; border-radius: 12px; margin-bottom: 24px;
                 border-left: 4px solid #c8a96e;'>
-        <h1 style='color:#c8a96e; margin:0; font-size:1.8rem;'>🏠 桃園中壢 AVM 房價評估系統</h1>
-        <p style='color:#9aa0b0; margin:4px 0 0 0;'>三法估價模型 ｜ 市場比較法 + 成本法 + 收益法</p>
+        <h1 style='color:#c8a96e; margin:0; font-size:1.8rem;'>🏠 桃園 AVM 房價評估系統</h1>
+        <p style='color:#9aa0b0; margin:4px 0 0 0;'>三法估價模型 ｜ 市場比較法 + 成本法 + 收益法 ｜ 中壢區・龜山區</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # ── 側邊欄：資料來源
+    # ── 側邊欄：僅顯示系統資訊
     with st.sidebar:
-        st.markdown("### 📂 資料來源")
-
-        data_mode = st.radio("載入方式", ["📁 指定資料夾路徑", "⬆️ 手動上傳檔案"], index=0)
-
-        uploaded_transactions = []
-        uploaded_land = None
-        tx_folder_path = ""
-        land_file_path = ""
-
-        if data_mode == "⬆️ 手動上傳檔案":
-            st.caption("可一次選取多個CSV（按住Shift或Cmd）")
-            uploaded_transactions = st.file_uploader(
-                "實價登錄 CSV（可多選）", type=["csv"],
-                accept_multiple_files=True, key="transaction"
-            )
-            uploaded_land = st.file_uploader(
-                "公告地價 CSV/TXT", type=["csv", "txt"], key="land"
-            )
-        else:
-            st.caption("輸入你電腦上的資料夾路徑")
-            tx_folder_path = st.text_input(
-                "實價登錄 CSV 資料夾路徑",
-                placeholder="例：/Users/cindy/Desktop/實價登錄",
-            )
-            land_file_path = st.text_input(
-                "公告地價檔案路徑（單一檔案）",
-                placeholder="例：/Users/cindy/Desktop/115桃園地價.csv",
-            )
-            if tx_folder_path and os.path.isdir(tx_folder_path):
-                csv_files = [f for f in os.listdir(tx_folder_path) if f.endswith(".csv")]
-                st.success(f"✅ 找到 {len(csv_files)} 個CSV檔案")
-            elif tx_folder_path:
-                st.error("❌ 找不到此路徑，請確認是否正確")
-
-        # 狀態顯示
-        has_tx = len(uploaded_transactions) > 0 or (tx_folder_path and os.path.isdir(tx_folder_path))
-        has_land = uploaded_land is not None or (land_file_path and os.path.isfile(land_file_path))
-        if has_tx or has_land:
-            st.info(f"{'✅ 實價登錄已載入' if has_tx else ''} {'｜ ✅ 地價已載入' if has_land else ''}")
-        else:
-            st.info("📋 使用內建預設資料")
-
+        st.markdown("### ℹ️ 系統資訊")
+        st.info("📋 使用內建預設資料\n（2024Q4實價登錄校正值）")
+        st.caption("資料來源：內政部實價登錄、樂居房價統計、住展市調")
         st.divider()
-        st.markdown("### ⚙️ 三法權重調整")
-        w1 = st.slider("市場比較法 (%)", 0, 100, 50, 5)
-        w2 = st.slider("成本法 (%)", 0, 100, 25, 5)
-        w3 = st.slider("收益法 (%)", 0, 100, 25, 5)
-        total_w = w1 + w2 + w3
-        if total_w != 100:
-            st.error(f"⚠️ 權重合計 {total_w}%，請調整為 100%")
-        else:
-            st.success("✅ 權重合計 100%")
+        st.markdown("### 📍 適用區域")
+        st.caption("✅ 桃園市中壢區（5個商圈）")
+        st.caption("✅ 桃園市龜山區（5個商圈）")
+        st.divider()
+        st.markdown("### ⚙️ 三法權重（內部設定）")
+        st.caption("市場比較法：60%")
+        st.caption("成本法：20%")
+        st.caption("收益法：20%")
+
+    # 內部固定權重（不提供使用者調整）
+    w1, w2, w3 = 60, 20, 20
+    total_w = 100
+
+    # 上傳資料（停用，全用內建）
+    uploaded_transactions = []
+    uploaded_land = None
+    tx_folder_path = ""
+    land_file_path = ""
 
     # ── 主面板：兩欄
     col_input, col_result = st.columns([1, 1.2], gap="large")
@@ -320,8 +386,23 @@ def main():
         with st.expander("📐 面積與格局", expanded=True):
             area_ping = st.number_input("建物主建物坪數（坪）", min_value=5.0, max_value=150.0, value=28.0, step=0.5)
             public_ratio = st.slider("公設比（%）", 20, 45, 33) / 100
-            parking_type = st.selectbox("車位類型", list(PARKING_PRICE.keys()))
-            parking_count = st.number_input("車位數量", min_value=0, max_value=3, value=1)
+            st.markdown("""
+            <div style='background:#f0f7ff; border-left:4px solid #5b8cff;
+                        border-radius:6px; padding:12px 14px; margin-top:8px;'>
+                <div style='font-size:0.8rem; font-weight:600; color:#2E5FA3; margin-bottom:6px;'>
+                    🚗 車位市場行情參考（實價登錄獨立登記）
+                </div>
+                <div style='font-size:0.8rem; color:#374151; line-height:1.8;'>
+                    平面車位：<b>120～180萬</b><br>
+                    坡道平面：<b>100～150萬</b><br>
+                    機械車位：<b>50～80萬</b><br>
+                    地下室平面（含管理）：<b>150～200萬</b>
+                </div>
+                <div style='font-size:0.75rem; color:#6B7280; margin-top:6px;'>
+                    ※ 車位價格於實價登錄中獨立登記，本系統估算不含車位，請另行參考上述行情。
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
 
         with st.expander("🏗️ 建商與成本", expanded=True):
             construction_grade = st.selectbox("建物等級", list(CONSTRUCTION_COST.keys()))
@@ -330,10 +411,9 @@ def main():
 
         with st.expander("💰 開價資訊", expanded=True):
             asking_total = st.number_input(
-                "建商開價總價（萬元）", min_value=100, max_value=10000, value=1200, step=10
+                "建商開價總價（萬元，不含車位）", min_value=100, max_value=10000, value=1200, step=10
             )
             asking_total_yuan = asking_total * 10000
-            include_parking_in_asking = st.checkbox("開價含車位", value=True)
 
         with st.expander("🔧 加分/扣分項目", expanded=False):
             near_mrt = st.checkbox("捷運站500m內")
@@ -345,10 +425,6 @@ def main():
     # ── 右側結果
     with col_result:
         st.markdown("### 📊 估價結果")
-
-        if total_w != 100:
-            st.warning("請先將三法權重調整為合計 100%")
-            return
 
         # 計算調整因子
         floor_adj = 0.03 if high_floor else 0.0
@@ -428,17 +504,8 @@ def main():
 
         weighted = weighted_average([r1, r2, r3], [w1, w2, w3])
 
-        # 車位處理
-        parking_value = PARKING_PRICE[parking_type] * parking_count
-        if parking_count > 0 and parking_type != "無車位":
-            estimated_no_parking = weighted["total_price"]
-            estimated_total = estimated_no_parking + parking_value
-        else:
-            estimated_total = weighted["total_price"]
-
-        # 開價比較（若開價含車位）
-        asking_without_parking = asking_total_yuan - (parking_value if include_parking_in_asking else 0)
-        signal, color, ratio = risk_signal(asking_without_parking, weighted["total_price"])
+        # 開價比較（主建物，不含車位）
+        signal, color, ratio = risk_signal(asking_total_yuan, weighted["total_price"])
 
         # ── 風險燈號
         st.markdown(f"""
@@ -465,7 +532,7 @@ def main():
         # ── 三法明細
         st.markdown("#### 三法估價明細")
         method_data = {
-            "方法": [f"市場比較法（{w1}%）", f"成本法（{w2}%）", f"收益法（{w3}%）", "**加權平均**"],
+            "方法": ["市場比較法（60%）", "成本法（20%）", "收益法（20%）", "**加權平均**"],
             "單價（元/坪）": [
                 f"{r1['unit_price_ping']:,.0f}",
                 f"{r2['unit_price_ping']:,.0f}",
@@ -480,17 +547,6 @@ def main():
             ],
         }
         st.dataframe(pd.DataFrame(method_data), hide_index=True, use_container_width=True)
-
-        # ── 車位拆分
-        if parking_count > 0 and parking_type != "無車位":
-            st.markdown("#### 🚗 車位拆分計算")
-            p1, p2, p3 = st.columns(3)
-            with p1:
-                st.metric("主建物估值", f"{weighted['total_price']/10000:,.0f} 萬")
-            with p2:
-                st.metric(f"車位（{parking_count}個）", f"{parking_value/10000:,.0f} 萬")
-            with p3:
-                st.metric("合計估值", f"{estimated_total/10000:,.0f} 萬")
 
         # ── 調整因子明細
         with st.expander("🔍 調整因子明細（市場比較法）"):
@@ -522,8 +578,77 @@ def main():
             st.write(f"- 資本化率：{r3['cap_rate']:.1%}")
             st.write(f"- 估算總價：{r3['total_price']/10000:,.0f} 萬元")
 
-        # ── 視覺化
-        st.markdown("#### 📈 三法與開價比較")
+        # ── 區域行情趨勢圖
+        st.markdown("#### 📈 區域行情趨勢與估值位置")
+        trend_data = MARKET_TREND[district]
+        years = list(trend_data.keys())
+        prices_trend = list(trend_data.values())
+
+        # 估值單價
+        est_unit = weighted["unit_price_ping"]
+        low_unit = est_unit * 0.95
+        high_unit = est_unit * 1.05
+
+        fig2 = go.Figure()
+
+        # 合理區間色塊
+        fig2.add_hrect(
+            y0=low_unit, y1=high_unit,
+            fillcolor="#c8a96e", opacity=0.15,
+            line_width=0,
+            annotation_text="合理區間",
+            annotation_position="right",
+            annotation_font_color="#c8a96e",
+        )
+
+        # 趨勢曲線
+        fig2.add_trace(go.Scatter(
+            x=years, y=prices_trend,
+            mode="lines+markers",
+            name="商圈均價",
+            line=dict(color="#5b8cff", width=3),
+            marker=dict(size=8),
+        ))
+
+        # 估值水平線
+        fig2.add_hline(
+            y=est_unit,
+            line_dash="dash",
+            line_color="#c8a96e",
+            line_width=2,
+            annotation_text=f"本件估值 {est_unit:,.0f}",
+            annotation_position="left",
+            annotation_font_color="#c8a96e",
+        )
+
+        # 開價水平線
+        asking_unit = asking_total_yuan / area_ping if area_ping > 0 else 0
+        fig2.add_hline(
+            y=asking_unit,
+            line_dash="dot",
+            line_color="#e74c3c" if color == "red" else ("#f39c12" if color == "orange" else "#2ecc71"),
+            line_width=2,
+            annotation_text=f"建商開價 {asking_unit:,.0f}",
+            annotation_position="right",
+            annotation_font_color="#e74c3c" if color == "red" else ("#f39c12" if color == "orange" else "#2ecc71"),
+        )
+
+        fig2.update_layout(
+            paper_bgcolor="#1a1f2e",
+            plot_bgcolor="#1a1f2e",
+            font_color="#c8d0e0",
+            yaxis_title="元/坪",
+            xaxis_title="年度",
+            xaxis=dict(tickvals=years, ticktext=[str(y) for y in years]),
+            height=360,
+            margin=dict(t=20, b=20, l=80, r=120),
+            legend=dict(bgcolor="rgba(0,0,0,0)"),
+        )
+        st.plotly_chart(fig2, use_container_width=True)
+        st.caption("灰金色塊 = 合理估值區間（±5%）｜虛線 = 本件估值｜點線 = 建商開價")
+
+        # ── 三法長條比較
+        st.markdown("#### 📊 三法與開價比較")
         fig = go.Figure()
         methods = ["市場比較法", "成本法", "收益法", "加權估值", "建商開價"]
         prices = [
@@ -547,7 +672,7 @@ def main():
             font_color="#c8d0e0",
             yaxis_title="萬元",
             showlegend=False,
-            height=320,
+            height=300,
             margin=dict(t=20, b=20),
         )
         st.plotly_chart(fig, use_container_width=True)
